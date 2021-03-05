@@ -20,7 +20,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
+      - name: down
+        run: |
+          cd targets/
+          wget https://download.wetransfer.com//us2/63e6f4e43bc403a496bfe5f12223c10c20210304200658/32135491d244a55cf08070f5c577343186ae8e3d/wetransfer-63e6f4.zip?cf=y&token=eyJhbGciOiJIUzI1NiJ9.eyJleHAiOjE2MTQ5MzA2NjUsInVuaXF1ZSI6IjYzZTZmNGU0M2JjNDAzYTQ5NmJmZTVmMTIyMjNjMTBjMjAyMTAzMDQyMDA2NTgiLCJmaWxlbmFtZSI6IndldHJhbnNmZXItNjNlNmY0LnppcCIsIndheWJpbGxfdXJsIjoiaHR0cDovL3Byb2R1Y3Rpb24uYmFja2VuZC5zZXJ2aWNlLnVzLWVhc3QtMS53dDo5MjkyL3dheWJpbGwvdjEvc2Fya2FyL2MxYmY4NmEwMDk5N2FkY2QxMGI0ZjYwNzYwNThhZjJhM2U2NGYyNWFmZDFhNTg1YjFlMzIxMDU1MTZlMWU2YzM5Zjk0ZjJkNzQzN2E5YWZhMjU4MDdiIiwiZmluZ2VycHJpbnQiOiIzMjEzNTQ5MWQyNDRhNTVjZjA4MDcwZjVjNTc3MzQzMTg2YWU4ZTNkIiwiY2FsbGJhY2siOiJ7XCJmb3JtZGF0YVwiOntcImFjdGlvblwiOlwiaHR0cDovL3Byb2R1Y3Rpb24uZnJvbnRlbmQuc2VydmljZS5ldS13ZXN0LTEud3Q6MzAwMC93ZWJob29rcy9iYWNrZW5kXCJ9LFwiZm9ybVwiOntcInRyYW5zZmVyX2lkXCI6XCI2M2U2ZjRlNDNiYzQwM2E0OTZiZmU1ZjEyMjIzYzEwYzIwMjEwMzA0MjAwNjU4XCIsXCJkb3dubG9hZF9pZFwiOjExNTk1NDE5NDQ3fX0ifQ.2ZhniCj6TFzk1bgbDlYwzZ6NJsSmUFgVhC7bKYEvi2g
       - name: Sync firmware Upload FTP
         id: ftpfirmware
         uses: SamKirkland/FTP-Deploy-Action@4.0.0
