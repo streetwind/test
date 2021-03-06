@@ -24,3 +24,5 @@ jobs:
         uses: MitchWind/ftp-deploy@master
         with:
             server: "v0.ftp.upyun.com"
+            username: "mofeng64/wind-openwrt"
+            password: ${{ secrets.FTP_PASSWOD }}
