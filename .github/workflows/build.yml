@@ -21,26 +21,4 @@ jobs:
       - name: Checkout
         uses: actions/checkout@main
       - name: down
-        run: |
-          cd targets/
-          wget https://openwrt.sysblz.com/1.img.gz
-      - name: Sync firmware Upload FTP
-        id: ftpfirmware
-        uses: SamKirkland/FTP-Deploy-Action@4.0.0
-        with:
-          server: "v0.ftp.upyun.com"
-          username: "mofeng64/wind-openwrt"
-          password: ${{ secrets.FTP_PASSWOD }}
-          local-dir: "targets/"
-          server-dir: "upyun/"
-          dangerous-clean-slate: true
-
-      - name: Upload ftp
-        uses: sebastianpopp/ftp-action@releases/v2
-        with:
-          host: "v0.ftp.upyun.com"
-          user: "mofeng64/wind-openwrt"
-          password: ${{ secrets.FTP_PASSWOD }}
-          localDir: "targets/"
-          remoteDir: "test"
-          options: "--delete --asci"
+        uses: MitchWind/ftp-deploy@main
