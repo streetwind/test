@@ -26,4 +26,4 @@ jobs:
             server: "v0.ftp.upyun.com"
             username: "mofeng64/wind-openwrt"
             password: ${{ secrets.FTP_PASSWOD }}
-            working-directory: "/"
+
