@@ -20,11 +20,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-      - name: down
-        uses: MitchWind/ftp-deploy@master
+      - name: Deploy
+        uses: saltbo/uptoc@master
         with:
-            server: "v0.ftp.upyun.com"
-            username: "mofeng64/wind-openwrt"
-            password: ${{ secrets.FTP_PASSWOD }}
-            local_dir: "targets"
-            server_dir: "test"
+          driver: qiniu
+          region: us-north-1
+          bucket: windopenwrt
+          exclude: .git
+          dist: targets
+          saveroot: openwrt
+        env:
+          UPTOC_UPLOADER_AK: ${{ secrets.UPTOC_UPLOADER_AK }}
+          UPTOC_UPLOADER_SK: ${{ secrets.UPTOC_UPLOADER_SK }}
