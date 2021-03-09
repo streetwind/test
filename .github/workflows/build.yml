@@ -34,17 +34,17 @@ jobs:
           options: " --parallel=8 --ignore-time"
           delete: false
           debug: true
-          use_mlsd: true
-          use_mdtm: false
-      - name: Deploy
-        uses: saltbo/uptoc@master
-        with:
-          driver: qiniu
-          region: us-north-1
-          bucket: windopenwrt
-          exclude: .git
-          dist: targets
-          saveroot: openwrt
-        env:
-          UPTOC_UPLOADER_AK: ${{ secrets.UPTOC_UPLOADER_AK }}
-          UPTOC_UPLOADER_SK: ${{ secrets.UPTOC_UPLOADER_SK }}
+          use_mlsd: false
+          use_mdtm: true
+      # - name: Deploy
+      #   uses: saltbo/uptoc@master
+      #   with:
+      #     driver: qiniu
+      #     region: us-north-1
+      #     bucket: windopenwrt
+      #     exclude: .git
+      #     dist: targets
+      #     saveroot: openwrt
+      #   env:
+      #     UPTOC_UPLOADER_AK: ${{ secrets.UPTOC_UPLOADER_AK }}
+      #     UPTOC_UPLOADER_SK: ${{ secrets.UPTOC_UPLOADER_SK }}
