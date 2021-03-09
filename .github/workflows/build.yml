@@ -32,6 +32,7 @@ jobs:
           local_dir: "targets"
           server_dir: "test"
           options: " --parallel=8 --ignore-time"
+          delete: false
           debug: true
           use_mlsd: true
           use_mdtm: false
