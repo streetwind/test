@@ -31,8 +31,10 @@ jobs:
           ssl_allow: true
           local_dir: "targets"
           server_dir: "test"
-          options: " --parallel=8"
-          debug: false
+          options: " --parallel=8 --ignore-time"
+          debug: true
+          use_mlsd: true
+          use_mdtm: false
       - name: Deploy
         uses: saltbo/uptoc@master
         with:
