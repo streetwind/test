@@ -39,7 +39,7 @@ jobs:
           delete: true
           debug: true
           # use_mlsd: true
-          # use_mdtm: false
+          use_mdtm: false
       # - name: Deploy
       #   uses: saltbo/uptoc@master
       #   with:
