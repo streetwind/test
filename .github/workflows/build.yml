@@ -35,7 +35,7 @@ jobs:
           ssl_allow: true
           local_dir: "targets"
           server_dir: "test"
-          options: " --parallel=8 --ignore-time --use-pget=5"
+          options: " --parallel=8 "
           delete: true
           debug: true
           use_mlsd: false
