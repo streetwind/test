@@ -20,7 +20,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
-
+      - name: ls file
+        run: |
+          ls -lah targets/
       - name: Sync firmware Upload FTP
         id: ftpfirmware
         uses: MitchWind/ftp-deploy@master
@@ -32,7 +34,7 @@ jobs:
           local_dir: "targets"
           server_dir: "test"
           options: " --parallel=8 --ignore-time"
-          delete: false
+          delete: true
           debug: true
           # use_mlsd: true
           # use_mdtm: false
