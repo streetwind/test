@@ -34,8 +34,8 @@ jobs:
           options: " --parallel=8 --ignore-time"
           delete: false
           debug: true
-          use_mlsd: true
-          use_mdtm: false
+          # use_mlsd: true
+          # use_mdtm: false
       # - name: Deploy
       #   uses: saltbo/uptoc@master
       #   with:
