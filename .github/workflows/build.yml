@@ -35,9 +35,9 @@ jobs:
           ssl_allow: true
           local_dir: "targets"
           server_dir: "test"
-          options: " --parallel=8 --ignore-time "
+          options: " --parallel=8 --ignore-time --use-pget=5"
           delete: true
-          debug: false
+          debug: true
           use_mlsd: false
           use_mdtm: true
       # - name: Deploy
