@@ -37,8 +37,8 @@ jobs:
           server_dir: "test"
           options: " --parallel=8 --ignore-time "
           delete: true
-          debug: true
-          use_mlsd: true
+          debug: false
+          use_mlsd: false
           use_mdtm: true
       # - name: Deploy
       #   uses: saltbo/uptoc@master
