@@ -35,7 +35,7 @@ jobs:
           ssl_allow: true
           local_dir: "targets"
           server_dir: "test"
-          options: " --parallel=8 --ignore-time"
+          options: " --parallel=8 --ignore-time --only-newer"
           delete: false
           debug: true
           # use_mlsd: true
