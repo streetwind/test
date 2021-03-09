@@ -23,7 +23,6 @@ jobs:
 
       - name: Sync firmware Upload FTP
         id: ftpfirmware
-        if: env.UP_FTP =='true' && env.IS_CONFIG_CONF == 'true'
         uses: MitchWind/ftp-deploy@master
         with:
           server: "v0.ftp.upyun.com"
