@@ -32,7 +32,7 @@ jobs:
           local_dir: "targets"
           server_dir: "test"
           options: " --parallel=8"
-          debug: true
+          debug: false
       - name: Deploy
         uses: saltbo/uptoc@master
         with:
