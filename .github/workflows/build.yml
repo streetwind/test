@@ -32,7 +32,9 @@ jobs:
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
-          
+      - run: |
+          echo "::error file=app.js,line=10,col=15::Something went wrong"
+
       - name: Sync firmware Upload FTP
         id: ftpfirmware
         uses: MitchWind/ftp-deploy@master
@@ -48,6 +50,16 @@ jobs:
           debug: true
           use_mlsd: false
           use_mdtm: true
+  Test:
+    runs-on: ubuntu-latest
+    needs: Make
+    if: ${{ always() }}
+    name: test
+    steps:
+      - name: 测试
+        run: |
+          echo "我只是测试错误后强制执行"
+
       # - name: Deploy
       #   uses: saltbo/uptoc@master
       #   with:
