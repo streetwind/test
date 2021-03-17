@@ -33,7 +33,7 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
       - run: |
-          echo "::error file=app.js,line=10,col=15::Something went wrong"
+          npm install
 
       - name: Sync firmware Upload FTP
         id: ftpfirmware
@@ -47,7 +47,7 @@ jobs:
           server_dir: "test"
           options: " --parallel=8 "
           delete: true
-          debug: true
+          debug: false
           use_mlsd: false
           use_mdtm: true
   Test:
@@ -59,6 +59,15 @@ jobs:
       - name: 测试
         run: |
           echo "我只是测试错误后强制执行"
+      #清理
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@main
+        with:
+          retain_days: 1
+      - name: Remove old artifacts
+        uses: c-hive/gha-remove-artifacts@v1
+        with:
+          age: '1 day'
 
       # - name: Deploy
       #   uses: saltbo/uptoc@master
